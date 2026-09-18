@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conversor de temperaturas entre Celsius, Fahrenheit y Kelvin.">
+    <title>Conversor de Temperaturas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="app-container">
+        <section class="converter-card">
+            <header class="header">
+                <div class="temperature-icon" aria-hidden="true">🌡️</div>
+                <div>
+                    <h1>Conversor de Temperaturas</h1>
+                    <p>Convierte fácilmente entre Celsius, Fahrenheit y Kelvin.</p>
+                </div>
+            </header>
+
+            <div class="temperature-status" id="temperatureStatus">
+                <span class="status-icon">🌡️</span>
+                <span id="statusText">Ingresa una temperatura</span>
+            </div>
+
+            <form id="converterForm" novalidate>
+                <div class="input-section">
+                    <div class="field-group">
+                        <label for="temperature">Temperatura</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">🌡️</span>
+                            <input type="number" id="temperature" placeholder="Ej. 25" step="any" autocomplete="off" aria-describedby="errorMessage">
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="fromUnit">Convertir desde</label>
+                        <select id="fromUnit">
+                            <option value="C">Celsius (°C)</option>
+                            <option value="F">Fahrenheit (°F)</option>
+                            <option value="K">Kelvin (K)</option>
+                        </select>
+                    </div>
+
+                    <button type="button" id="swapButton" class="swap-button" title="Intercambiar unidades" aria-label="Intercambiar unidades">⇄</button>
+
+                    <div class="field-group">
+                        <label for="toUnit">Convertir a</label>
+                        <select id="toUnit">
+                            <option value="C">Celsius (°C)</option>
+                            <option value="F" selected>Fahrenheit (°F)</option>
+                            <option value="K">Kelvin (K)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <p id="errorMessage" class="error-message" role="alert" aria-live="polite"></p>
+
+                <div class="result-box" id="resultBox">
+                    <span class="result-label">Resultado</span>
+                    <div class="result-value" id="resultValue">—</div>
+                    <div class="result-unit" id="resultUnit">Ingresa un valor para convertir</div>
+                </div>
+
+                <div class="actions">
+                    <button type="submit" class="convert-button"><span>↻</span> Convertir</button>
+                    <button type="button" id="clearButton" class="clear-button"><span>✕</span> Limpiar</button>
+                </div>
+            </form>
+
+            <footer class="footer">
+                <span>❄️ Frío</span>
+                <span class="separator">•</span>
+                <span>🔥 Calor</span>
+                <span class="separator">•</span>
+                <span>°C °F K</span>
+            </footer>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
